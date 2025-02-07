@@ -1,14 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import styled from 'styled-components';
-
-const FormContainer = styled.div`
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-`;
+import '../styles/Events.css'; // Import the CSS file
 
 const SignUp = () => {
   const [formData, setFormData] = useState({ name: '', age: '', email: '', photo: null });
@@ -30,16 +22,31 @@ const SignUp = () => {
   };
 
   return (
-    <FormContainer>
+    <div className="form-container">
       <h2>Join the Fan Club</h2>
       <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="Name" onChange={(e) => setFormData({ ...formData, name: e.target.value })} />
-        <input type="number" placeholder="Age" onChange={(e) => setFormData({ ...formData, age: e.target.value })} />
-        <input type="email" placeholder="Email" onChange={(e) => setFormData({ ...formData, email: e.target.value })} />
-        <input type="file" onChange={(e) => setFormData({ ...formData, photo: e.target.files[0] })} />
+        <input
+          type="text"
+          placeholder="Name"
+          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+        />
+        <input
+          type="number"
+          placeholder="Age"
+          onChange={(e) => setFormData({ ...formData, age: e.target.value })}
+        />
+        <input
+          type="email"
+          placeholder="Email"
+          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+        />
+        <input
+          type="file"
+          onChange={(e) => setFormData({ ...formData, photo: e.target.files[0] })}
+        />
         <button type="submit">Sign Up</button>
       </form>
-    </FormContainer>
+    </div>
   );
 };
 
