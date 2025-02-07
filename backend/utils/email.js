@@ -23,7 +23,7 @@ const sendCredentialEmail = async (email, name, memberNumber, photoPath) => {
   const mailOptions = {
     from: process.env.EMAIL_USER,
     to: email,
-    subject: 'Your Linkin Park Fan Club Credential',
+    subject: 'Bienvenido Soldier. Esta es tu credicial',
     html: credentialHtml,
     attachments: [
       {
