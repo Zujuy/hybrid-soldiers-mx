@@ -12,7 +12,7 @@ const Home = () => {
       {/* Description section */}
       <HomeContent>
         <HomeDescription>
-        Únete a nuestra comunidad de fans de Linkin Park. ¡Mantente al día de los últimos eventos, conéctate con otros fans y conviértete en miembro oficial de Hybrid Soldiers México hoy mismo!
+        Únete a nuestra comunidad de fans de Linkin Park. ¡Mantente al día de los últimos eventos, conéctate con otros fans y conviértete en miembro oficial de Hybrid Soldiers México!
         </HomeDescription>
       </HomeContent>
     </HomeContainer>
