@@ -19,12 +19,12 @@ import {
 
 // Datos de ejemplo para el staff
 const staffMembers = [
-  { name: "Miembro 1", image: "https://via.placeholder.com/150" },
-  { name: "Miembro 2", image: "https://via.placeholder.com/150" },
-  { name: "Miembro 3", image: "https://via.placeholder.com/150" },
-  { name: "Miembro 4", image: "https://via.placeholder.com/150" },
-  { name: "Miembro 5", image: "https://via.placeholder.com/150" },
-  { name: "Miembro 6", image: "https://via.placeholder.com/150" },
+  { name: "Bren", image: "https://res.cloudinary.com/dfxpfatj7/image/upload/t_Profile/v1739336055/65230708_2279075055686716_2631961593985892352_n_avf8mu.png" },
+  { name: "Rock Shinoda", image: "https://res.cloudinary.com/dfxpfatj7/image/upload/t_Profile/v1739336055/463795272_10162209943611660_8263872186281043492_n_qqwvfu.png" },
+  { name: "Jalil", image: "https://res.cloudinary.com/dfxpfatj7/image/upload/t_Profile/v1739336055/463891801_10222240751962739_6686099833473312699_n_vfgmc2.png" },
+  { name: "Lucy", image: "https://res.cloudinary.com/dfxpfatj7/image/upload/t_Profile/v1739336056/473140701_10170367371210564_2458075546366321652_n_ixp8r1.png" },
+  { name: "Hugo", image: "https://res.cloudinary.com/dfxpfatj7/image/upload/t_Profile/v1739336186/465662598_10160777064938335_3503967426650264473_n_pbar0w.png" },
+  { name: "Zujuy", image: "https://res.cloudinary.com/dfxpfatj7/image/upload/t_Profile/v1739336127/Screenshot_2025-02-11_at_10.55.15_p.m._t8okfp.png" },
 ];
 
 const Home = () => {

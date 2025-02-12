@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 /* Estilizamos el AppBar de Material UI para aplicar un fondo en gradiente */
 export const StyledAppBar = styled(AppBar)`
-  background: linear-gradient(135deg, rgb(186, 12, 151), #feb47b) !important;
+  background: linear-gradient(135deg, rgb(186, 12, 151),rgb(81, 73, 66)) !important;
 `;
 
 /* Toolbar para distribuir los elementos (logo y links) */
@@ -62,6 +62,6 @@ export const StyledLink = styled(Link)`
   transition: color 0.3s;
 
   &:hover {
-    color: #f39c12;
+    color:rgb(174, 14, 128);
   }
 `;
