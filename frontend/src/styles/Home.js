@@ -19,7 +19,7 @@ export const HomeContainer = styled.div`
 
 /* Sección Hero */
 export const HomeHero = styled.div`
-  background-image: url('https://res.cloudinary.com/dfxpfatj7/image/upload/t_Banner 16:9/v1739325066/znran4rntdzjvf9dji8b.jpg');
+  background-image: linear-gradient(to top, rgba(255,105,180,0.8), transparent), url('https://res.cloudinary.com/dfxpfatj7/image/upload/t_Banner 16:9/v1739325066/znran4rntdzjvf9dji8b.jpg');
   background-size: cover;
   background-position: center;
   height: 80vh;

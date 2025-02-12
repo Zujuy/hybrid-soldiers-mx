@@ -42,8 +42,18 @@ const Home = () => {
         </HomeDescription>
       </HomeContent>
       
-      {/* Módulo del Staff */}
-      <StaffSection>
+      {/* Banner de Registro */}
+      <SignupBanner>
+        <SignupText>
+          ¿Aún no eres parte de la comunidad? ¡Regístrate ahora y obtén tu credencial exclusiva!
+        </SignupText>
+        <SignupButton onClick={() => { /* Aquí puedes redirigir al componente de Sign Up */ }}>
+          Regístrate
+        </SignupButton>
+      </SignupBanner>
+      
+       {/* Staff */}
+       <StaffSection>
         <h2>Conoce a nuestro Staff</h2>
         <StaffGrid>
           {staffMembers.map((member, index) => (
@@ -54,16 +64,6 @@ const Home = () => {
           ))}
         </StaffGrid>
       </StaffSection>
-      
-      {/* Banner de Registro */}
-      <SignupBanner>
-        <SignupText>
-          ¿Aún no eres parte de la comunidad? ¡Regístrate ahora y obtén tu credencial exclusiva!
-        </SignupText>
-        <SignupButton onClick={() => { /* Aquí puedes redirigir al componente de Sign Up */ }}>
-          Regístrate
-        </SignupButton>
-      </SignupBanner>
       
       {/* Footer */}
       <Footer>
