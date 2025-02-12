@@ -1,14 +1,21 @@
 import React from 'react';
-import '../styles/Home.css';
+import { HomeContainer, HomeHero, HomeContent, HomeTitle, HomeDescription } from '../styles/Home';
 
 const Home = () => {
   return (
-    <div className="home-container">
-      <h1 className="home-title">Bienvenido a Hybrid Soldiers México!</h1>
-      <p className="home-description">
-        Join our community of passionate Linkin Park fans. Stay updated on the latest events, connect with other fans, and become an official member today!
-      </p>
-    </div>
+    <HomeContainer>
+      {/* Hero section */}
+      <HomeHero>
+        <HomeTitle>Bienvenido a Hybrid Soldiers México!</HomeTitle>
+      </HomeHero>
+      
+      {/* Description section */}
+      <HomeContent>
+        <HomeDescription>
+        Únete a nuestra comunidad de fans de Linkin Park. ¡Mantente al día de los últimos eventos, conéctate con otros fans y conviértete en miembro oficial de Hybrid Soldiers México hoy mismo!
+        </HomeDescription>
+      </HomeContent>
+    </HomeContainer>
   );
 };
 
