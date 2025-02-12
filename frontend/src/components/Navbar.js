@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 import IconButton from '@mui/material/IconButton';
 import Drawer from '@mui/material/Drawer';
@@ -43,7 +42,7 @@ const Navbar = () => {
     >
       <List>
         {navItems.map((item) => (
-          <ListItem button key={item.label} component={Link} to={item.path}>
+          <ListItem button key={item.label} component={StyledLink} to={item.path}>
             <ListItemText primary={item.label} />
           </ListItem>
         ))}

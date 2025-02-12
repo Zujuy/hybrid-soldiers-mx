@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 /* Estilizamos el AppBar de Material UI para aplicar un fondo en gradiente */
 export const StyledAppBar = styled(AppBar)`
@@ -55,11 +55,15 @@ export const MobileNavContainer = styled.div`
 `;
 
 /* Estilizamos el Link de react-router-dom para que mantenga la apariencia deseada */
-export const StyledLink = styled(Link)`
+export const StyledLink = styled(NavLink)`
   color: white;
   text-decoration: none;
   font-size: 1.2rem;
   transition: color 0.3s;
+
+  &.active {
+    border-bottom: 2px solid rgb(186, 12, 151);
+  }
 
   &:hover {
     color:rgb(174, 14, 128);
