@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import '../styles/Events.css'; // Import the CSS file
 
 const SignUp = () => {
   const [formData, setFormData] = useState({ name: '', age: '', email: '', photo: null });

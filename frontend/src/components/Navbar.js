@@ -17,7 +17,6 @@ import {
 } from '../styles/Navbar';
 
 const Navbar = () => {
-  const [showAnimation, setShowAnimation] = useState(true);
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   const navItems = [

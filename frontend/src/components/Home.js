@@ -1,6 +1,5 @@
 // Home.js
-import React, { useState, useEffect } from 'react';
-import LogoAnimation from './../styles/logoAnimation';
+import React from 'react';
 import {
   HomeContainer,
   HomeHero,

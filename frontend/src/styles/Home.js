@@ -19,7 +19,8 @@ export const HomeContainer = styled.div`
 
 /* Sección Hero */
 export const HomeHero = styled.div`
-  background-image: url('https://res.cloudinary.com/dfxpfatj7/image/upload/t_Banner 16:9/v1739325066/znran4rntdzjvf9dji8b.jpg');
+  position: relative;
+  background-image: url('https://res.cloudinary.com/dfxpfatj7/image/upload/t_Banner%2016:9/v1739325066/znran4rntdzjvf9dji8b.jpg');
   background-size: cover;
   background-position: center;
   height: 80vh;
@@ -30,14 +31,45 @@ export const HomeHero = styled.div`
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 
-  /* Para pantallas pequeñas se usa la imagen para mobile/tableta */
+  /* Pseudo-elemento para la imagen hover */
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* Cambia la URL de la imagen de hover por la que desees */
+    background-image: url('https://res.cloudinary.com/dfxpfatj7/image/upload/v1740352094/hero1_pdq0i3.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  /* Al pasar el cursor, se muestra la imagen hover */
+  &:hover::after {
+    opacity: 1;
+  }
+
+  /* Para asegurar que el contenido del hero se muestre por encima del pseudo-elemento */
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Para pantallas pequeñas se usa la imagen para mobile/tableta y se desactiva el efecto hover */
   @media (max-width: 768px) {
     background-image: url('https://res.cloudinary.com/dfxpfatj7/image/upload/v1739331782/mob_dszvs6.png');
     background-size: 100% auto;
-    background-repeat: no-repeat;       /* Evita la repetición */
-    background-position: center;        /* Centra la imagen */
-    height: auto;                       /* Permite que la altura se ajuste al contenido de la imagen */
+    background-repeat: no-repeat;
+    background-position: center;
+    height: auto;
     min-height: 60vh;
+
+    &::after {
+      opacity: 0;
+    }
   }
 `;
 

@@ -1,40 +1,38 @@
 import React from 'react';
-import '../styles/Events.css'
+import {
+  Header,
+  Grid,
+  GridItem,
+  Image,
+} from '../styles/Events';
 
 const Events = () => {
-  const upcomingEvents = [
-    { id: 1, title: 'Linkin Park Live 2023', date: '2023-12-15', image: 'https://via.placeholder.com/300' },
-  ];
-
-  const pastEvents = [
-    { id: 2, title: 'Linkin Park Reunion 2022', date: '2022-08-20', image: 'https://via.placeholder.com/300' },
-    { id: 3, title: 'Chester Tribute Night', date: '2021-07-20', image: 'https://via.placeholder.com/300' },
+  const galleries = [
+    { src: 'img1.jpg', alt: 'Evento 1', link: '/galeria1' },
+    { src: 'img2.jpg', alt: 'Evento 2', link: '/galeria2' },
+    { src: 'img3.jpg', alt: 'Evento 3', link: '/galeria3' },
+    { src: 'img4.jpg', alt: 'Evento 4', link: '/galeria4' },
+    { src: 'img5.jpg', alt: 'Evento 5', link: '/galeria5' },
+    { src: 'img6.jpg', alt: 'Evento 6', link: '/galeria6' },
   ];
 
   return (
-    <div className="events-container">
-      <h2>Upcoming Events</h2>
-      <div className="event-list">
-        {upcomingEvents.map((event) => (
-          <div key={event.id} className="event-card">
-            <img src={event.image} alt={event.title} className="event-image" />
-            <h3 className="event-title">{event.title}</h3>
-            <p className="event-date">{event.date}</p>
-          </div>
+    <>
+      <Header>
+        <h1>Eventos y Conciertos</h1>
+      </Header>
+      <Grid>
+        {galleries.map((item, index) => (
+          <GridItem
+            to={item.link}
+            key={index}
+            style={{ animationDelay: `${index * 0.2}s` }}
+          >
+            <Image src={item.src} alt={item.alt} />
+          </GridItem>
         ))}
-      </div>
-
-      <h2>Past Events</h2>
-      <div className="event-list">
-        {pastEvents.map((event) => (
-          <div key={event.id} className="event-card">
-            <img src={event.image} alt={event.title} className="event-image" />
-            <h3 className="event-title">{event.title}</h3>
-            <p className="event-date">{event.date}</p>
-          </div>
-        ))}
-      </div>
-    </div>
+      </Grid>
+    </>
   );
 };
 
