@@ -1,4 +1,6 @@
-import React from 'react';
+// Home.js
+import React, { useState, useEffect } from 'react';
+import LogoAnimation from './../styles/logoAnimation';
 import {
   HomeContainer,
   HomeHero,
@@ -52,8 +54,8 @@ const Home = () => {
         </SignupButton>
       </SignupBanner>
       
-       {/* Staff */}
-       <StaffSection>
+      {/* Staff */}
+      <StaffSection>
         <h2>Conoce a nuestro Staff</h2>
         <StaffGrid>
           {staffMembers.map((member, index) => (

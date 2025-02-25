@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 
 /* Estilizamos el AppBar de Material UI para aplicar un fondo en gradiente */
 export const StyledAppBar = styled(AppBar)`
-  background: linear-gradient(135deg, rgb(186, 12, 151),rgb(81, 73, 66)) !important;
+  background: rgb(186, 12, 151) !important;
 `;
 
 /* Toolbar para distribuir los elementos (logo y links) */
