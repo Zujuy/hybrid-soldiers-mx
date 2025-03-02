@@ -1,54 +1,60 @@
-import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import styled, { keyframes } from 'styled-components';
+import { Link } from 'react-router-dom'; // Asegúrate de importar Link aquí
 
-const Header = styled.header`
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
+export const Header = styled.header`
   text-align: center;
   padding: 20px;
   background: #222;
   color: #fff;
 `;
 
-const GalleryContainer = styled.div`
-  max-width: 1200px;
-  margin: auto;
+export const Grid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
   padding: 20px;
 `;
 
-const GalleryGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 10px;
-`;
-
-const GalleryImage = styled.img`
-  width: 100%;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-  &:hover {
-    transform: scale(1.05);
+export const GridItem = styled(Link)`
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  animation: ${fadeIn} 1s ease forwards;
+  opacity: 0;
+  &:hover img {
+    transform: scale(1.1);
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  &:hover::after {
+    opacity: 1;
   }
 `;
 
-const Modal = styled.div`
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.8);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  visibility: ${props => (props.isOpen ? 'visible' : 'hidden')};
-  opacity: ${props => (props.isOpen ? 1 : 0)};
-  transition: opacity 0.3s ease;
-`;
-
-const ModalContent = styled.div`
-  max-width: 90%;
-  max-height: 90%;
-`;
-
-const ModalImage = styled.img`
+export const Image = styled.img`
   width: 100%;
-  height: auto;
-  border-radius: 4px;
+  display: block;
+  border-radius: 8px;
+  transition: transform 0.5s ease;
 `;
