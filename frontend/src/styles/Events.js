@@ -15,8 +15,8 @@ const fadeIn = keyframes`
 export const Header = styled.header`
   text-align: center;
   padding: 20px;
-  background: #222;
-  color: #fff;
+  background: ${({ theme }) => theme.colors.backgroundLight};
+  color: ${({ theme }) => theme.colors.textSecondary};
 `;
 
 export const Grid = styled.div`

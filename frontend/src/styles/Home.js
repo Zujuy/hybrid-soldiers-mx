@@ -20,7 +20,7 @@ export const HomeContainer = styled.div`
 /* Sección Hero */
 export const HomeHero = styled.div`
   position: relative;
-  background-image: url('https://res.cloudinary.com/dfxpfatj7/image/upload/t_Banner%2016:9/v1739325066/znran4rntdzjvf9dji8b.jpg');
+  background-image: url('https://res.cloudinary.com/dfxpfatj7/image/upload/v1741026261/Linkin-Park-From-Zero_jb5rsk.jpg');
   background-size: cover;
   background-position: center;
   height: 80vh;
@@ -29,7 +29,7 @@ export const HomeHero = styled.div`
   justify-content: center;
   width: 100%;
   color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  text-shadow: 2px 2px 4px rgba(203, 203, 203, 0.7);
 
   /* Pseudo-elemento para la imagen hover */
   &::after {
@@ -40,7 +40,7 @@ export const HomeHero = styled.div`
     right: 0;
     bottom: 0;
     /* Cambia la URL de la imagen de hover por la que desees */
-    background-image: url('https://res.cloudinary.com/dfxpfatj7/image/upload/v1740352094/hero1_pdq0i3.jpg');
+    background-image: url('https://res.cloudinary.com/dfxpfatj7/image/upload/v1741026261/linkin-park-band-pic-2024_nuucls.jpg');
     background-size: cover;
     background-position: center;
     opacity: 0;
@@ -60,7 +60,7 @@ export const HomeHero = styled.div`
 
   /* Para pantallas pequeñas se usa la imagen para mobile/tableta y se desactiva el efecto hover */
   @media (max-width: 768px) {
-    background-image: url('https://res.cloudinary.com/dfxpfatj7/image/upload/v1739331782/mob_dszvs6.png');
+    background-image: url('https://res.cloudinary.com/dfxpfatj7/image/upload/t_Banner 9:16/v1741026261/Linkin-Park-From-Zero_jb5rsk.jpg');
     background-size: 100% auto;
     background-repeat: no-repeat;
     background-position: center;
@@ -81,7 +81,7 @@ export const HomeTitle = styled.h1`
   animation: ${fadeIn} 1.5s ease-in-out;
 
   @media (max-width: 768px) {
-    margin-bottom: 200px;
+    margin-bottom: -100px;
     ${'' /* padding: 0px 25px 0 0; */}
   }
 `;
