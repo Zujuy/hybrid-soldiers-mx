@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 export const Header = styled.header`
   text-align: center;
   padding: 20px;
-  background: #222;
-  color: #fff;
+  background: ${({ theme }) => theme.colors.backgroundLight};
+  color: ${({ theme }) => theme.colors.textPrimary};
   font-size: 1.5rem;
 `;
 
@@ -105,8 +105,8 @@ export const BackButtonContainer = styled.div`
 `;
 
 export const BackButton = styled(Link)`
-  background: #6a0dad;
-  color: white;
+   background: ${({ theme }) => theme.colors.backgroundDark};
+   color: ${({ theme }) => theme.colors.textPrimary};
   padding: 10px 20px;
   text-decoration: none;
   font-size: 16px;

@@ -16,7 +16,7 @@ export const Header = styled.header`
   text-align: center;
   padding: 20px;
   background: ${({ theme }) => theme.colors.backgroundLight};
-  color: ${({ theme }) => theme.colors.textSecondary};
+  color: ${({ theme }) => theme.colors.textPrimary};
 `;
 
 export const Grid = styled.div`
