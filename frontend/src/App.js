@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from '../src/components/Navbar';
 import Home from '../src/components/Home';
 import Events from '../src/components/Events';
+import Galery from '../src/components/Galery';
 import SignUp from '../src/components/Signup';
 import Credential from '../src/components/Credential';
 import LogoAnimation from './styles/logoAnimation';
@@ -28,6 +29,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/events" element={<Events />} />
+        <Route path="/gallery/:albumId" element={<Galery />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/credential" element={<Credential name="John Doe" memberNumber="001" photo="https://via.placeholder.com/100" />} />
       </Routes>

@@ -1,40 +1,104 @@
-import React from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
+import { useParams } from 'react-router-dom';
+import { galleriesData } from '../data/galleryData';
 import {
   Header,
-  Grid,
-  GridItem,
-  Image,
-} from '../styles/Events';
-import img1 from '../assets/images/img1.jpg';
+  GalleryContainer,
+  GalleryGrid,
+  GalleryImage,
+  Modal,
+  ModalContent,
+  ModalImage,
+  CloseButton,
+  NavButton,
+  BackButtonContainer,
+  BackButton
+} from '../styles/Galery';
 
-const Events = () => {
-  const galleries = [
-    { src: img1, alt: 'Memorial de Chester', link: '/galeria1' },
-    { src: 'img2.jpg', alt: 'Evento 2', link: '/galeria2' },
-    { src: 'img3.jpg', alt: 'Evento 3', link: '/galeria3' },
-    { src: 'img4.jpg', alt: 'Evento 4', link: '/galeria4' },
-    { src: 'img5.jpg', alt: 'Evento 5', link: '/galeria5' },
-    { src: 'img6.jpg', alt: 'Evento 6', link: '/galeria6' },
-  ];
+const Gallery = () => {
+  const { albumId } = useParams();
+  const [modalOpen, setModalOpen] = useState(false);
+  const [currentImgIndex, setCurrentImgIndex] = useState(0);
+
+  const album = galleriesData[albumId];
+  
+  const prevImage = useCallback(() => {
+    setCurrentImgIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : album.images.length - 1));
+  }, [album]);
+
+  const nextImage = useCallback(() => {
+    setCurrentImgIndex((prevIndex) => (prevIndex < album.images.length - 1 ? prevIndex + 1 : 0));
+  }, [album]);
+
+  const openModal = useCallback((index) => {
+    setCurrentImgIndex(index);
+    setModalOpen(true);
+  }, []);
+
+  const closeModal = useCallback((e) => {
+    if (e.target.id === "modal-overlay") {
+      setModalOpen(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (!modalOpen) return;
+      if (event.key === 'ArrowLeft') {
+        prevImage();
+      } else if (event.key === 'ArrowRight') {
+        nextImage();
+      } else if (event.key === 'Escape') {
+        setModalOpen(false);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [modalOpen, prevImage, nextImage]);
+
+  if (!album) {
+    return <div>Álbum no encontrado</div>;
+  }
 
   return (
     <>
       <Header>
-        <h1>Eventos y Conciertos</h1>
+        <h1>{album.title}</h1>
       </Header>
-      <Grid>
-        {galleries.map((item, index) => (
-          <GridItem
-            to={item.link}
-            key={index}
-            style={{ animationDelay: `${index * 0.2}s` }}
-          >
-            <Image src={item.src} alt={item.alt} />
-          </GridItem>
-        ))}
-      </Grid>
+      
+      <BackButtonContainer>
+        <BackButton to="/events">⬅ Regresar a Eventos</BackButton>
+      </BackButtonContainer>
+
+      <GalleryContainer>
+        <GalleryGrid>
+          {album.images.map((img, index) => (
+            <GalleryImage 
+              key={index}
+              src={img.src}
+              alt={img.alt}
+              onClick={() => openModal(index)}
+              style={{ cursor: "pointer" }}
+            />
+          ))}
+        </GalleryGrid>
+      </GalleryContainer>
+
+      {modalOpen && (
+        <Modal id="modal-overlay" onClick={closeModal} $isOpen={modalOpen}>
+          <CloseButton onClick={() => setModalOpen(false)}>✖</CloseButton>
+          <NavButton onClick={prevImage} style={{ left: 10 }}>&lt;</NavButton>
+          <ModalContent onClick={(e) => e.stopPropagation()}>
+            <ModalImage src={album.images[currentImgIndex].src} alt={album.images[currentImgIndex].alt} />
+          </ModalContent>
+          <NavButton onClick={nextImage} style={{ right: 10 }}>&gt;</NavButton>
+        </Modal>
+      )}
     </>
   );
 };
 
-export default Events;
+export default Gallery;
