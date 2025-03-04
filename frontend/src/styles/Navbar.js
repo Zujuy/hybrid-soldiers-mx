@@ -62,10 +62,10 @@ export const StyledLink = styled(NavLink)`
   transition: color 0.3s;
 
   &.active {
-    border-bottom: 2px solid rgb(186, 12, 151);
+    color: ${({ theme }) => theme.colors.primary}
   }
 
   &:hover {
-    color:rgb(174, 14, 128);
+    color: ${({ theme }) => theme.colors.primary}
   }
 `;

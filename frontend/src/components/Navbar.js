@@ -5,6 +5,7 @@ import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
+import { Link, useLocation } from 'react-router-dom';
 import {
   StyledAppBar,
   StyledToolbar,
@@ -18,6 +19,7 @@ import {
 
 const Navbar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const location = useLocation();
 
   const navItems = [
     { label: 'Home', path: '/' },
@@ -26,7 +28,6 @@ const Navbar = () => {
   ];
 
   const toggleDrawer = (open) => (event) => {
-    // Si se presionan teclas como Tab o Shift, no hacemos nada
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return;
     }
@@ -42,7 +43,13 @@ const Navbar = () => {
     >
       <List>
         {navItems.map((item) => (
-          <ListItem button key={item.label} component={StyledLink} to={item.path}>
+          <ListItem
+            button
+            key={item.label}
+            component={Link}
+            to={item.path}
+            style={{ color: location.pathname === item.path ? 'rgb(186, 12, 151)' : 'inherit' }}
+          >
             <ListItemText primary={item.label} />
           </ListItem>
         ))}
@@ -54,17 +61,20 @@ const Navbar = () => {
     <>
       <StyledAppBar position="static">
         <StyledToolbar>
-          {/* Sección del logo y nombre de la marca */}
-          <LogoContainer>
-            {/* Reemplaza la URL por la de tu logotipo real */}
+          {/* Logo y nombre enlazados al Home */}
+          <LogoContainer as={Link} to="/">
             <LogoImage src="https://res.cloudinary.com/dfxpfatj7/image/upload/v1739335003/SOLDADO_cjqve0.png" alt="Hybrid Soldiers México" />
-            <BrandName variant="h6">Hybrid Soldiers México</BrandName>
+            <BrandName>Hybrid Soldiers México</BrandName>
           </LogoContainer>
 
           {/* Enlaces de navegación para escritorio */}
           <NavLinks>
             {navItems.map((item) => (
-              <StyledLink key={item.label} to={item.path}>
+              <StyledLink 
+                key={item.label} 
+                to={item.path} 
+                className={location.pathname === item.path ? 'active' : ''}
+              >
                 {item.label}
               </StyledLink>
             ))}
@@ -93,3 +103,5 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
