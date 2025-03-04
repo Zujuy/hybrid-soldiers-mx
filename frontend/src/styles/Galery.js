@@ -105,8 +105,8 @@ export const BackButtonContainer = styled.div`
 `;
 
 export const BackButton = styled(Link)`
-   background: ${({ theme }) => theme.colors.backgroundDark};
-   color: ${({ theme }) => theme.colors.textPrimary};
+  background: ${({ theme }) => theme.colors.backgroundDark};
+  color: ${({ theme }) => theme.colors.textPrimary} !important;
   padding: 10px 20px;
   text-decoration: none;
   font-size: 16px;
@@ -114,7 +114,7 @@ export const BackButton = styled(Link)`
   transition: background 0.3s;
 
   &:hover {
-    background: #520b8a;
+    background: ${({ theme }) => theme.colors.danger};
   }
 `;
 
