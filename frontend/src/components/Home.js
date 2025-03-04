@@ -1,5 +1,6 @@
 // Home.js
-import React from 'react';
+import React, { useState } from 'react';
+import newsData from '../data/news';
 import {
   HomeContainer,
   HomeHero,
@@ -16,7 +17,17 @@ import {
   SignupButton,
   Footer,
   SocialMedia,
+  GalleryPreview,
+  NewsSection,
+  NewsArticle,
+  PlaylistContainer,
+  ReadMoreButton,
+  NewsModal,
+  ModalContent,
+  CloseButton,
 } from '../styles/Home';
+import img1 from '../assets/img1.jpg';
+import img2 from '../assets/img2.jpg';
 
 // Datos de ejemplo para el staff
 const staffMembers = [
@@ -28,7 +39,16 @@ const staffMembers = [
   { name: "Zujuy", image: "https://res.cloudinary.com/dfxpfatj7/image/upload/t_Profile/v1739336127/Screenshot_2025-02-11_at_10.55.15_p.m._t8okfp.png" },
 ];
 
+const galleryPreviews = [
+  { title: "Memorial de Chester", image: img1, link: "/gallery/galeria1" },
+  { title: "Concierto CDMX 2015", image: img2, link: "/gallery/galeria2" },
+  { title: "Evento 3", image: "https://via.placeholder.com/300", link: "/gallery/galeria3" },
+  { title: "Evento 4", image: "https://via.placeholder.com/300", link: "/gallery/galeria4" },
+];
+
+
 const Home = () => {
+  const [selectedArticle, setSelectedArticle] = useState(null);
   return (
     <HomeContainer>
       {/* Sección Hero */}
@@ -43,16 +63,67 @@ const Home = () => {
         </HomeDescription>
       </HomeContent>
       
+      {/* Noticias */}
+      <NewsSection>
+        <h2>Últimas Noticias</h2>
+        {newsData.map((article, index) => (
+        <NewsArticle key={index}>
+            <h3>{article.title}</h3>
+            <p>{article.content}</p>
+          <ReadMoreButton onClick={() => setSelectedArticle(article)}>Lee más
+          </ReadMoreButton>
+        </NewsArticle>
+        ))}
+      </NewsSection>
+      
+      {/* Modal de Noticias */}
+      {selectedArticle && (
+        <NewsModal>
+          <ModalContent>
+            <CloseButton onClick={() => setSelectedArticle(null)}>✖</CloseButton>
+            <h2>{selectedArticle.title}</h2>
+            <img src={selectedArticle.image} alt={selectedArticle.title} style={{ width: '100%', borderRadius: '10px' }} />
+            <p>{selectedArticle.fullContent}</p>
+          </ModalContent>
+        </NewsModal>
+      )}
+
+      {/* Galerías Destacadas */}
+      <GalleryPreview>
+        <h2>Galerías Destacadas</h2>
+        <div>
+          {galleryPreviews.map((gallery, index) => (
+            <a key={index} href={gallery.link}>
+              <img src={gallery.image} alt={gallery.title} />
+              <p>{gallery.title}</p>
+            </a>
+          ))}
+        </div>
+      </GalleryPreview>
+
       {/* Banner de Registro */}
       <SignupBanner>
         <SignupText>
           ¿Aún no eres parte de la comunidad? ¡Regístrate ahora y obtén tu credencial exclusiva!
         </SignupText>
-        <SignupButton onClick={() => { /* Aquí puedes redirigir al componente de Sign Up */ }}>
-          Regístrate
-        </SignupButton>
+        <SignupButton>Regístrate</SignupButton>
       </SignupBanner>
       
+      
+      {/* Reproductor de música */}
+      <PlaylistContainer>
+        <h2>Escucha Linkin Park</h2>
+        <iframe
+          src="https://open.spotify.com/embed/playlist/1dybxRGczBhu7q5AZfyIpa?utm_source=generator&theme=0"
+          width="100%"
+          height="380"
+          style={{ border: "none", borderRadius: "12px" }}
+          allowtransparency="true"
+          allow="encrypted-media"
+          title="Linkin Park Playlist"
+        ></iframe>
+      </PlaylistContainer>
+
       {/* Staff */}
       <StaffSection>
         <h2>Conoce a nuestro Staff</h2>
@@ -65,6 +136,7 @@ const Home = () => {
           ))}
         </StaffGrid>
       </StaffSection>
+      
       
       {/* Footer */}
       <Footer>

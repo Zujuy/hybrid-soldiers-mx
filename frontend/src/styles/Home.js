@@ -190,3 +190,130 @@ export const SocialMedia = styled.div`
 export const Copyright = styled.div`
   font-size: 0.9rem;
 `;
+
+export const GalleryPreview = styled.section`
+  width: 100%;
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+
+  h2 {
+    margin-bottom: 20px;
+    color: ${({ theme }) => theme.colors.primary};
+  }
+
+  div {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  a {
+    text-decoration: none;
+    color: ${({ theme }) => theme.colors.textSecondary};
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+`;
+
+/* Noticias */
+export const NewsSection = styled.section`
+  width: 100%;
+  padding: 40px 20px;
+  background: ${({ theme }) => theme.colors.backgroundLight};
+  text-align: center;
+
+  h2 {
+    margin-bottom: 20px;
+  }
+`;
+
+export const NewsArticle = styled.div`
+  max-width: 600px;
+  margin: auto;
+  padding: 15px;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.secondary};
+
+  h3 {
+    color: ${({ theme }) => theme.colors.primary};
+  }
+`;
+
+/* Playlist */
+export const PlaylistContainer = styled.section`
+  width: 100%;
+  text-align: center;
+  padding: 40px 20px;
+
+  iframe {
+    border-radius: 12px;
+    max-width: 800px;
+    width: 100%;
+  }
+`;
+
+/* Botón de "Lee más" */
+export const ReadMoreButton = styled.button`
+  background-color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.textPrimary};
+  border: none;
+  padding: 10px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.secondary};
+  }
+`;
+
+/* Modal de Noticias */
+export const NewsModal = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+`;
+
+export const ModalContent = styled.div`
+  background: ${({ theme }) => theme.colors.backgroundLight};
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  text-align: center;
+  position: relative;
+`;
+
+export const CloseButton = styled.button`
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: ${({ theme }) => theme.colors.danger};
+
+  &:hover {
+    color: red;
+  }
+`;
