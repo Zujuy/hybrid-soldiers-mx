@@ -1,5 +1,17 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import {
+  FormContainer,
+  FormHeader,
+  FormTitle,
+  StyledForm,
+  InputGroup,
+  Input,
+  FileInput,
+  SubmitButton,
+  BackgroundImage,
+  ProfileIcon
+} from '../styles/Signup';
 
 const SignUp = () => {
   const [formData, setFormData] = useState({ name: '', age: '', email: '', photo: null });
@@ -14,38 +26,58 @@ const SignUp = () => {
 
     try {
       const res = await axios.post('http://localhost:5000/api/members/signup', data);
-      alert(`Member created successfully! Your member number is ${res.data.memberNumber}`);
+      alert(`¡Registro exitoso! Tu número de miembro es ${res.data.memberNumber}`);
     } catch (err) {
-      alert('Error creating member');
+      alert('Error al registrar el miembro');
     }
   };
 
   return (
-    <div className="form-container">
-      <h2>Join the Fan Club</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Name"
-          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-        />
-        <input
-          type="number"
-          placeholder="Age"
-          onChange={(e) => setFormData({ ...formData, age: e.target.value })}
-        />
-        <input
-          type="email"
-          placeholder="Email"
-          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-        />
-        <input
-          type="file"
-          onChange={(e) => setFormData({ ...formData, photo: e.target.files[0] })}
-        />
-        <button type="submit">Sign Up</button>
-      </form>
-    </div>
+    <FormContainer>
+      <FormHeader>
+        <BackgroundImage src="https://res.cloudinary.com/dfxpfatj7/image/upload/v1741026261/Linkin-Park-From-Zero_jb5rsk.jpg" alt="Header" />
+        <ProfileIcon src="https://via.placeholder.com/100" alt="Profile" />
+        <FormTitle>Únete al Fan Club</FormTitle>
+      </FormHeader>
+      <StyledForm onSubmit={handleSubmit}>
+        <InputGroup>
+          <Input
+            type="text"
+            placeholder="Nombre"
+            value={formData.name}
+            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+            required
+          />
+          <Input
+            type="number"
+            placeholder="Edad"
+            value={formData.age}
+            onChange={(e) => setFormData({ ...formData, age: e.target.value })}
+            required
+          />
+        </InputGroup>
+        <InputGroup>
+          <Input
+            type="email"
+            placeholder="Correo Electrónico"
+            value={formData.email}
+            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+            required
+          />
+        </InputGroup>
+        <FileInput>
+          <label htmlFor="photo">Sube tu foto</label>
+          <input
+            id="photo"
+            type="file"
+            accept="image/*"
+            onChange={(e) => setFormData({ ...formData, photo: e.target.files[0] })}
+            required
+          />
+        </FileInput>
+        <SubmitButton type="submit">Registrarse</SubmitButton>
+      </StyledForm>
+    </FormContainer>
   );
 };
 
