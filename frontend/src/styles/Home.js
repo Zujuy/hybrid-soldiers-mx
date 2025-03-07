@@ -118,6 +118,7 @@ export const StaffMember = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 100px;
 `;
 
 export const StaffImage = styled.img`
@@ -164,28 +165,6 @@ export const SignupButton = styled.button`
   }
 `;
 
-/* Footer */
-export const Footer = styled.footer`
-  width: 100%;
-  padding: 20px;
-  background-color: #333;
-  color: white;
-  text-align: center;
-`;
-
-export const SocialMedia = styled.div`
-  margin-bottom: 10px;
-
-  a {
-    color: white;
-    margin: 0 10px;
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-`;
 
 export const Copyright = styled.div`
   font-size: 0.9rem;

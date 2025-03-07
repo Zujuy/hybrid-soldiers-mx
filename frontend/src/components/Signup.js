@@ -5,12 +5,10 @@ import {
   FormHeader,
   FormTitle,
   StyledForm,
-  InputGroup,
   Input,
   FileInput,
   SubmitButton,
-  BackgroundImage,
-  ProfileIcon
+  BackgroundImage
 } from '../styles/Signup';
 
 const SignUp = () => {
@@ -36,35 +34,30 @@ const SignUp = () => {
     <FormContainer>
       <FormHeader>
         <BackgroundImage src="https://res.cloudinary.com/dfxpfatj7/image/upload/v1741026261/Linkin-Park-From-Zero_jb5rsk.jpg" alt="Header" />
-        <ProfileIcon src="https://via.placeholder.com/100" alt="Profile" />
-        <FormTitle>Únete al Fan Club</FormTitle>
       </FormHeader>
+      <FormTitle>Únete al Fan Club</FormTitle>
       <StyledForm onSubmit={handleSubmit}>
-        <InputGroup>
-          <Input
-            type="text"
-            placeholder="Nombre"
-            value={formData.name}
-            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-            required
-          />
-          <Input
-            type="number"
-            placeholder="Edad"
-            value={formData.age}
-            onChange={(e) => setFormData({ ...formData, age: e.target.value })}
-            required
-          />
-        </InputGroup>
-        <InputGroup>
-          <Input
-            type="email"
-            placeholder="Correo Electrónico"
-            value={formData.email}
-            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-            required
-          />
-        </InputGroup>
+        <Input
+          type="text"
+          placeholder="Nombre"
+          value={formData.name}
+          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+          required
+        />
+        <Input
+          type="number"
+          placeholder="Edad"
+          value={formData.age}
+          onChange={(e) => setFormData({ ...formData, age: e.target.value })}
+          required
+        />
+        <Input
+          type="email"
+          placeholder="Correo Electrónico"
+          value={formData.email}
+          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+          required
+        />
         <FileInput>
           <label htmlFor="photo">Sube tu foto</label>
           <input
@@ -82,3 +75,5 @@ const SignUp = () => {
 };
 
 export default SignUp;
+
+

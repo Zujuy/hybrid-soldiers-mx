@@ -9,6 +9,7 @@ import Events from '../src/components/Events';
 import Galery from '../src/components/Galery';
 import SignUp from '../src/components/Signup';
 import Credential from '../src/components/Credential';
+import Footer from '../src/components/Footer';
 import LogoAnimation from './styles/logoAnimation';
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
             <Route path="/signup" element={<SignUp />} />
             <Route path="/credential" element={<Credential name="John Doe" memberNumber="001" photo="https://via.placeholder.com/100" />} />
           </Routes>
+          <Footer />
         </Router>
       )}
     </ThemeProvider>

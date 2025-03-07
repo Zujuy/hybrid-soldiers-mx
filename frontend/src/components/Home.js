@@ -15,8 +15,6 @@ import {
   SignupBanner,
   SignupText,
   SignupButton,
-  Footer,
-  SocialMedia,
   GalleryPreview,
   NewsSection,
   NewsArticle,
@@ -136,19 +134,6 @@ const Home = () => {
           ))}
         </StaffGrid>
       </StaffSection>
-      
-      
-      {/* Footer */}
-      <Footer>
-        <SocialMedia>
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
-        </SocialMedia>
-        <div>
-          <small>Hybrid Soldiers México 2025 ©</small>
-        </div>
-      </Footer>
     </HomeContainer>
   );
 };
