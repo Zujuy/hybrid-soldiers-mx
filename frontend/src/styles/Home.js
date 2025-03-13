@@ -96,6 +96,7 @@ export const HomeContent = styled.div`
 export const HomeDescription = styled.p`
   font-size: 1.2rem;
   color: #333;
+  margin: 30px 0;
 `;
 
 /* Módulo del Staff */
@@ -208,7 +209,7 @@ export const GalleryPreview = styled.section`
 
 /* Noticias */
 export const NewsSection = styled.section`
-  width: 100%;
+  width: auto%;
   padding: 40px 20px;
   background: ${({ theme }) => theme.colors.backgroundLight};
   text-align: center;
@@ -226,6 +227,71 @@ export const NewsArticle = styled.div`
 
   h3 {
     color: ${({ theme }) => theme.colors.primary};
+  }
+`;
+
+/* Modal de Noticias */
+export const NewsModal = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  overflow-y: auto; /* Permite el scroll si el contenido es largo */
+  padding: 20px;
+`;
+
+export const ModalContent = styled.div`
+  background: ${({ theme }) => theme.colors.backgroundLight};
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 90%;
+  position: relative;
+  max-height: 80vh;
+  overflow-y: auto;
+  text-align: center;
+
+  h2 {
+    text-align: center; /* Centra el título */
+    margin-bottom: 10px;
+  }
+
+  p {
+    text-align: justify; /* Justifica el texto */
+    margin-top: 10px;
+  }
+`;
+
+
+/* Imagen dentro del modal */
+export const ModalImage = styled.img`
+  display: block;  /* Asegura que no tenga espacio adicional alrededor */
+  margin: 30px auto;  /* La centra horizontalmente */
+  max-height: 200px;
+  width: auto;
+  object-fit: cover;
+  border-radius: 10px;
+`;
+
+
+export const CloseButton = styled.button`
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: ${({ theme }) => theme.colors.danger};
+
+  &:hover {
+    color: red;
   }
 `;
 
@@ -256,43 +322,5 @@ export const ReadMoreButton = styled.button`
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.secondary};
-  }
-`;
-
-/* Modal de Noticias */
-export const NewsModal = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-`;
-
-export const ModalContent = styled.div`
-  background: ${({ theme }) => theme.colors.backgroundLight};
-  padding: 20px;
-  border-radius: 10px;
-  max-width: 600px;
-  text-align: center;
-  position: relative;
-`;
-
-export const CloseButton = styled.button`
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: ${({ theme }) => theme.colors.danger};
-
-  &:hover {
-    color: red;
   }
 `;
