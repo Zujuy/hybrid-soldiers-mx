@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import {
   FormContainer,
-  FormHeader,
   FormTitle,
   StyledForm,
   Input,
   FileInput,
   SubmitButton,
-  BackgroundImage
+  BackgroundImage,
+  FormContent,
+  Description
 } from '../styles/Signup';
 
 const SignUp = () => {
@@ -32,48 +33,59 @@ const SignUp = () => {
 
   return (
     <FormContainer>
-      <FormHeader>
+      {/* Formulario ocupa la mitad izquierda */}
+      <FormContent>
         <BackgroundImage src="https://res.cloudinary.com/dfxpfatj7/image/upload/v1741026261/Linkin-Park-From-Zero_jb5rsk.jpg" alt="Header" />
-      </FormHeader>
-      <FormTitle>Únete al Fan Club</FormTitle>
-      <StyledForm onSubmit={handleSubmit}>
-        <Input
-          type="text"
-          placeholder="Nombre"
-          value={formData.name}
-          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-          required
-        />
-        <Input
-          type="number"
-          placeholder="Edad"
-          value={formData.age}
-          onChange={(e) => setFormData({ ...formData, age: e.target.value })}
-          required
-        />
-        <Input
-          type="email"
-          placeholder="Correo Electrónico"
-          value={formData.email}
-          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-          required
-        />
-        <FileInput>
-          <label htmlFor="photo">Sube tu foto</label>
-          <input
-            id="photo"
-            type="file"
-            accept="image/*"
-            onChange={(e) => setFormData({ ...formData, photo: e.target.files[0] })}
+        <FormTitle>Únete al Fan Club</FormTitle>
+        <StyledForm onSubmit={handleSubmit}>
+          <Input
+            type="text"
+            placeholder="Nombre"
+            value={formData.name}
+            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
             required
           />
-        </FileInput>
-        <SubmitButton type="submit">Registrarse</SubmitButton>
-      </StyledForm>
+          <Input
+            type="number"
+            placeholder="Edad"
+            value={formData.age}
+            onChange={(e) => setFormData({ ...formData, age: e.target.value })}
+            required
+          />
+          <Input
+            type="email"
+            placeholder="Correo Electrónico"
+            value={formData.email}
+            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+            required
+          />
+          <FileInput>
+            <label htmlFor="photo">Sube tu foto</label>
+            <input
+              id="photo"
+              type="file"
+              accept="image/*"
+              onChange={(e) => setFormData({ ...formData, photo: e.target.files[0] })}
+              required
+            />
+          </FileInput>
+          <SubmitButton type="submit">Registrarse</SubmitButton>
+        </StyledForm>
+      </FormContent>
+
+      {/* Descripción en la mitad derecha */}
+      <Description>
+        <h3>¿Por qué inscribirte?</h3>
+        <ul>
+          <li>Obtén tu credencial exclusiva</li>
+          <li>Accede a eventos especiales de Hybrid Soldiers</li>
+          <li>Participa en concursos exclusivos</li>
+          <li>Gana premios en rifas</li>
+          <li>Forma parte de una comunidad increíble</li>
+        </ul>
+      </Description>
     </FormContainer>
   );
 };
 
 export default SignUp;
-
-

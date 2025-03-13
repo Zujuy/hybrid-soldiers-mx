@@ -1,104 +1,137 @@
 import styled from 'styled-components';
 
-/* Contenedor del formulario */
+/* Contenedor principal ocupa TODO el ancho sin bordes */
 export const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 100%;
-  max-width: 450px;
-  margin: auto;
-  padding: 20px;
-  background: ${({ theme }) => theme.colors.backgroundLight};
-  border-radius: 15px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  position: relative;
-  overflow: hidden;
-  margin-top: 50px;
+  width: 100vw;
+  height: 100vh;
+  margin: 0 0 100px 0;
+  padding: 0;
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+    align-items: stretch;
+  }
 `;
 
-/* Header con imagen */
-export const FormHeader = styled.div`
+/* Contenedor del formulario con fondo blanco */
+export const FormContent = styled.div`
   width: 100%;
-  position: relative;
+  padding: 60px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
-  margin-bottom: 20px;
+
+  @media (min-width: 1024px) {
+    width: 50%;
+  }
 `;
 
-/* Imagen de fondo */
-export const BackgroundImage = styled.img`
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 15px 15px 0 0;
-`;
-
-/* Título */
+/* Título del formulario */
 export const FormTitle = styled.h2`
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: ${({ theme }) => theme.colors.primary};
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 `;
 
-/* Formulario */
+/* Formulario sin bordes */
 export const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 20px;
+  gap: 20px;
 `;
 
-/* Grupo de inputs (para alineación) */
-export const InputGroup = styled.div`
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
+/* Imagen de fondo ahora ocupa toda la parte superior en mobile */
+export const BackgroundImage = styled.img`
   width: 100%;
+  height: 50%;
+  object-fit: cover;
+  border-radius: 10px;
+  justify-content: center;
+  margin-bottom: 50px;
+`;
 
-  input {
-    flex: 1;
+/* Descripción ahora ocupa toda la mitad derecha con fondo degradado */
+export const Description = styled.div`
+  width: 100%;
+  padding: 100px;
+  background: linear-gradient(135deg, ${({ theme }) => theme.colors.primary} 0%, ${({ theme }) => theme.colors.secondary} 100%);
+  color: white;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media (min-width: 1024px) {
+    width: 50%;
+  }
+
+  h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+  }
+
+  li::before {
+    content: "✔";
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-right: 10px;
   }
 `;
 
-/* Inputs con fondo y sombra */
+/* Inputs sin bordes y con diseño minimalista */
 export const Input = styled.input`
-  width: 100%; /* Hace que los inputs ocupen todo el ancho */
+  width: 100%;
   padding: 12px;
-  margin: 10px 0;
-  border: 2px solid ${({ theme }) => theme.colors.secondary};
-  border-radius: 5px;
+  border: none;
+  border-bottom: 2px solid ${({ theme }) => theme.colors.secondary};
   font-size: 1rem;
   outline: none;
-  background: #f5f5f5;
-  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1);
+  background: transparent;
+  transition: all 0.3s ease-in-out;
 
   &:focus {
-    border-color: ${({ theme }) => theme.colors.primary};
-    background: white;
-    box-shadow: 0 0 5px rgba(186, 12, 151, 0.5);
+    border-bottom: 2px solid ${({ theme }) => theme.colors.primary};
+    box-shadow: none;
   }
 `;
-
 
 /* Botón de carga de foto */
 export const FileInput = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 10px 0;
-
   label {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
     background: ${({ theme }) => theme.colors.primary};
     color: white;
-    padding: 10px;
-    border-radius: 5px;
     cursor: pointer;
-    margin-bottom: 5px;
+    transition: background 0.3s ease-in-out;
   }
 
   input {
     display: none;
+  }
+
+  &:hover label {
+    background: ${({ theme }) => theme.colors.secondary};
   }
 `;
 
@@ -111,11 +144,10 @@ export const SubmitButton = styled.button`
   font-size: 1.2rem;
   border-radius: 25px;
   cursor: pointer;
-  transition: background 0.3s;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
 
   &:hover {
+    transform: translateY(-3px);
     background: ${({ theme }) => theme.colors.secondary};
-    box-shadow: 0 5px 15px rgba(186, 12, 151, 0.5);
   }
 `;
