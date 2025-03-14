@@ -82,6 +82,18 @@ const Home = () => {
         </Link>
       </HomeContent>
 
+      {/* Galerías Destacadas */}
+      <GalleryPreview>
+        <h2>Galerías Destacadas</h2>
+        <div>
+          {galleryPreviews.map((gallery, index) => (
+            <a key={index} href={gallery.link}>
+              <img src={gallery.image} alt={gallery.title} />
+              <p>{gallery.title}</p>
+            </a>
+          ))}
+        </div>
+      </GalleryPreview>
 
       {/* Noticias */}
       <NewsSection>
@@ -106,19 +118,6 @@ const Home = () => {
           </ModalContent>
         </NewsModal>
       )}
-
-      {/* Galerías Destacadas */}
-      <GalleryPreview>
-        <h2>Galerías Destacadas</h2>
-        <div>
-          {galleryPreviews.map((gallery, index) => (
-            <a key={index} href={gallery.link}>
-              <img src={gallery.image} alt={gallery.title} />
-              <p>{gallery.title}</p>
-            </a>
-          ))}
-        </div>
-      </GalleryPreview>
 
       {/* Banner de Registro */}
       <SignupBanner>

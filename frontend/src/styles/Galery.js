@@ -20,6 +20,7 @@ export const GalleryGrid = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 15px;
   padding: 10px;
+  margin-bottom: 100px;
 `;
 
 export const GalleryImage = styled.img`
@@ -62,6 +63,7 @@ export const ModalImage = styled.img`
   border-radius: 8px;
   max-height: 80vh;
   object-fit: contain;
+  margin-bottom: 100px;
 `;
 
 export const CloseButton = styled.button`
