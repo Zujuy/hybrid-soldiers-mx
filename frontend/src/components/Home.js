@@ -27,6 +27,7 @@ import {
 } from '../styles/Home';
 import img1 from '../assets/img1.jpg';
 import img2 from '../assets/img2.jpg';
+import img3 from '../assets/img-2.jpg';
 
 const staffMembers = [
   { name: "Bren", image: "https://res.cloudinary.com/dfxpfatj7/image/upload/t_Profile/v1739336055/65230708_2279075055686716_2631961593985892352_n_avf8mu.png" },
@@ -40,7 +41,7 @@ const staffMembers = [
 const galleryPreviews = [
   { title: "Memorial de Chester", image: img1, link: "/gallery/galeria1" },
   { title: "Concierto CDMX 2015", image: img2, link: "/gallery/galeria2" },
-  { title: "Evento 3", image: "https://via.placeholder.com/300", link: "/gallery/galeria3" },
+  { title: "Concierto 2002 CDMX", image: img3, link: "/gallery/galeria3" },
   { title: "Evento 4", image: "https://via.placeholder.com/300", link: "/gallery/galeria4" },
 ];
 

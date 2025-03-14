@@ -76,4 +76,16 @@ export const galleriesData = {
       { src: '/images/concert2015/img43.jpg', alt: 'Imagen 43' },
     ],
   },
+
+  galeria3: {
+    title: 'Concierto 2002 | CDMX',
+    images: [
+      { src: '/images/2002/img-1.jpg', alt: 'Imagen 1' },
+      { src: '/images/2002/img-2.jpg', alt: 'Imagen 2' },
+      { src: '/images/2002/img-3.jpg', alt: 'Imagen 3' },
+      { src: '/images/2002/img-4.jpg', alt: 'Imagen 4' },
+      { src: '/images/2002/img-5.jpg', alt: 'Imagen 5' },
+      { src: '/images/2002/img-6.jpg', alt: 'Imagen 6' },
+    ],
+  },
 };
