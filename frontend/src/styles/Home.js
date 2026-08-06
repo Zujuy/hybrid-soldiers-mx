@@ -9,7 +9,7 @@ const fadeIn = keyframes`
   }
 `;
 
-/* Contenedor principal */
+/* principal container */
 export const HomeContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -17,7 +17,7 @@ export const HomeContainer = styled.div`
   width: 100%;
 `;
 
-/* Sección Hero */
+/* Hero Section */
 export const HomeHero = styled.div`
   position: relative;
   background-image: url('https://res.cloudinary.com/dfxpfatj7/image/upload/v1741026261/Linkin-Park-From-Zero_jb5rsk.jpg');
@@ -31,7 +31,7 @@ export const HomeHero = styled.div`
   color: white;
   text-shadow: 2px 2px 4px rgba(203, 203, 203, 0.7);
 
-  /* Pseudo-elemento para la imagen hover */
+  /* hover image */
   &::after {
     content: '';
     position: absolute;
@@ -39,7 +39,6 @@ export const HomeHero = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
-    /* Cambia la URL de la imagen de hover por la que desees */
     background-image: url('https://res.cloudinary.com/dfxpfatj7/image/upload/v1741026261/linkin-park-band-pic-2024_nuucls.jpg');
     background-size: cover;
     background-position: center;
@@ -47,18 +46,18 @@ export const HomeHero = styled.div`
     transition: opacity 0.5s ease;
   }
 
-  /* Al pasar el cursor, se muestra la imagen hover */
+  /*showing hover image*/
   &:hover::after {
     opacity: 1;
   }
 
-  /* Para asegurar que el contenido del hero se muestre por encima del pseudo-elemento */
+  /* hero showing */
   > * {
     position: relative;
     z-index: 1;
   }
 
-  /* Para pantallas pequeñas se usa la imagen para mobile/tableta y se desactiva el efecto hover */
+  /* deactivate hover for mobile */
   @media (max-width: 768px) {
     background-image: url('https://res.cloudinary.com/dfxpfatj7/image/upload/t_Banner 9:16/v1741026261/Linkin-Park-From-Zero_jb5rsk.jpg');
     background-size: 100% auto;
@@ -86,7 +85,7 @@ export const HomeTitle = styled.h1`
   }
 `;
 
-/* Sección de Contenido */
+/* content section */
 export const HomeContent = styled.div`
   padding: 20px;
   max-width: 800px;
@@ -99,7 +98,7 @@ export const HomeDescription = styled.p`
   margin: 30px 0;
 `;
 
-/* Módulo del Staff */
+/* staff module */
 export const StaffSection = styled.section`
   width: 100%;
   padding: 40px 20px;
@@ -136,7 +135,7 @@ export const StaffName = styled.p`
   font-weight: 500;
 `;
 
-/* Banner de Registro */
+/* sign up banner */
 export const SignupBanner = styled.section`
   width: 100%;
   padding: 40px 20px;
@@ -207,7 +206,7 @@ export const GalleryPreview = styled.section`
   }
 `;
 
-/* Noticias */
+/* News Section */
 export const NewsSection = styled.section`
   width: auto%;
   padding: 40px 20px;
@@ -230,7 +229,7 @@ export const NewsArticle = styled.div`
   }
 `;
 
-/* Modal de Noticias */
+/* news modal */
 export const NewsModal = styled.div`
   position: fixed;
   top: 0;
@@ -269,7 +268,7 @@ export const ModalContent = styled.div`
 `;
 
 
-/* Imagen dentro del modal */
+/* modal image */
 export const ModalImage = styled.img`
   display: block;  /* Asegura que no tenga espacio adicional alrededor */
   margin: 30px auto;  /* La centra horizontalmente */
@@ -308,7 +307,7 @@ export const PlaylistContainer = styled.section`
   }
 `;
 
-/* Botón de "Lee más" */
+/* read more */
 export const ReadMoreButton = styled.button`
   background-color: ${({ theme }) => theme.colors.primary};
   color: ${({ theme }) => theme.colors.textPrimary};

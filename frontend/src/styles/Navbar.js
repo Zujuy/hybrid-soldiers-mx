@@ -4,38 +4,37 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { NavLink } from 'react-router-dom';
 
-/* Estilizamos el AppBar de Material UI para aplicar un fondo en gradiente */
+/* Styled AppBar */
 export const StyledAppBar = styled(AppBar)`
   background: ${({ theme }) => theme.colors.secondary} !important;
 `;
 
-/* Toolbar para distribuir los elementos (logo y links) */
+/* Styled Toolbar */
 export const StyledToolbar = styled(Toolbar)`
   display: flex;
   justify-content: space-between;
   align-items: center;
 `;
 
-/* Contenedor para el logo y el nombre de la marca */
+/* Logo Container */
 export const LogoContainer = styled.div`
   display: flex;
   align-items: center;
 `;
 
-/* Imagen del logotipo */
+/* logo image */
 export const LogoImage = styled.img`
-  height: 40px; /* Ajusta el tamaño según necesites */
+  height: 40px; 
   margin-right: 10px;
 `;
 
-/* Nombre de la marca, basado en Typography de Material UI */
 export const BrandName = styled(Typography)`
   font-size: 1.5rem;
   font-weight: bold;
   color: white;
 `;
 
-/* Contenedor de links de navegación para escritorio (se oculta en pantallas pequeñas) */
+/* navigation links hidden on mobile */
 export const NavLinks = styled.div`
   display: flex;
   gap: 20px;
@@ -45,7 +44,7 @@ export const NavLinks = styled.div`
   }
 `;
 
-/* Contenedor para el ícono de menú, visible solo en pantallas menores a 768px */
+/* menu icon just for mobile */
 export const MobileNavContainer = styled.div`
   display: none;
 
@@ -54,7 +53,7 @@ export const MobileNavContainer = styled.div`
   }
 `;
 
-/* Estilizamos el Link de react-router-dom para que mantenga la apariencia deseada */
+/* react router link */
 export const StyledLink = styled(NavLink)`
   color: white;
   text-decoration: none;

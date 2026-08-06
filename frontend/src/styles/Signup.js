@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-/* Contenedor principal ocupa TODO el ancho sin bordes */
+/* Principal container */
 export const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -15,7 +15,7 @@ export const FormContainer = styled.div`
   }
 `;
 
-/* Contenedor del formulario con fondo blanco */
+/* form container */
 export const FormContent = styled.div`
   width: 100%;
   padding: 60px;
@@ -30,7 +30,7 @@ export const FormContent = styled.div`
   }
 `;
 
-/* Título del formulario */
+/* form title */
 export const FormTitle = styled.h2`
   font-size: 2rem;
   color: ${({ theme }) => theme.colors.primary};
@@ -38,7 +38,7 @@ export const FormTitle = styled.h2`
   margin-bottom: 25px;
 `;
 
-/* Formulario sin bordes */
+/* boderless form */
 export const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
@@ -46,7 +46,7 @@ export const StyledForm = styled.form`
   gap: 20px;
 `;
 
-/* Imagen de fondo ahora ocupa toda la parte superior en mobile */
+/* background image */
 export const BackgroundImage = styled.img`
   width: 100%;
   height: 50%;
@@ -56,7 +56,7 @@ export const BackgroundImage = styled.img`
   margin-bottom: 50px;
 `;
 
-/* Descripción ahora ocupa toda la mitad derecha con fondo degradado */
+/* description with gradient background */
 export const Description = styled.div`
   width: 100%;
   padding: 100px;
@@ -96,7 +96,7 @@ export const Description = styled.div`
   }
 `;
 
-/* Inputs sin bordes y con diseño minimalista */
+/* boderless input */
 export const Input = styled.input`
   width: 100%;
   padding: 12px;
@@ -113,7 +113,7 @@ export const Input = styled.input`
   }
 `;
 
-/* Botón de carga de foto */
+/* upload photo button */
 export const FileInput = styled.div`
   label {
     display: block;
@@ -135,7 +135,7 @@ export const FileInput = styled.div`
   }
 `;
 
-/* Botón de Enviar */
+/* Submit Button */
 export const SubmitButton = styled.button`
   background: ${({ theme }) => theme.colors.primary};
   color: white;

@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
 
-// Animación: fade in con desplazamiento hacia arriba
+// Animaation: fade in and move up
 const fadeInUp = keyframes`
   from {
     opacity: 0;
@@ -14,7 +14,7 @@ const fadeInUp = keyframes`
   }
 `;
 
-// Contenedor que ocupa toda la pantalla y tiene fondo negro
+// Container for the animation
 const AnimationContainer = styled.div`
   width: 100%;
   height: 100vh;
@@ -24,7 +24,7 @@ const AnimationContainer = styled.div`
   align-items: center;
 `;
 
-// Estilo para la imagen del logo con animación
+// logo image with animation
 const LogoImage = styled.img`
   max-width: 300px;
   animation: ${fadeInUp} 1s ease forwards;
@@ -32,7 +32,7 @@ const LogoImage = styled.img`
 `;
 
 const LogoAnimation = () => {
-  // Define las imágenes de los logos (reemplaza las URLs por las que desees)
+  // defime the logos to cycle through
   const logos = [
     'https://res.cloudinary.com/dfxpfatj7/image/upload/v1740350801/lp2_hw3xb5.png',
     'https://res.cloudinary.com/dfxpfatj7/image/upload/v1740350801/lp1_n84u05.png',
@@ -48,7 +48,7 @@ const LogoAnimation = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentLogo(prev => (prev + 1) % logos.length);
-    }, 1000); // Cambia el logo cada 2 segundos
+    }, 1000); // change logo every second
     return () => clearInterval(interval);
   }, [logos.length]);
 
